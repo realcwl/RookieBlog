@@ -1,0 +1,11 @@
+section#two.wrapper.style3.fade-up
+    .inner
+        h2 My Blog List
+        .features
+            - for(var i=0; i<articles.length; i++)
+                section
+                    span.icon.major.fa-code
+                    h3
+                        a(href="http://localhost:3000/blog/" + articles[i]._id)= articles[i].title
+                    p= articles[i].description
+                    hr
