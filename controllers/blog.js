@@ -17,7 +17,12 @@ router.get('/:id', function(req, res, next){
     var model = new Model(req.db);
     model.getArticles(function(data){
        view.render({articles: data});
-    }, {'_id': ObjectId(req.params.id)});
+    }, {
+            '_id': ObjectId(req.params.id)
+        },{
+            'MD_parse': true
+        }
+    );
 });
 
 module.exports = router;
